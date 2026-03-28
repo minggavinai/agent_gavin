@@ -2,116 +2,101 @@
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AGENT GAVIN AI 研究所 - 下一代互動技術實驗室</title>
-    <meta name="description" content="AGENT GAVIN AI 研究所致力於探索人工智慧與網頁競技的極限。由 BCTECH ASIA LIMITED 提供技術支持。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AGENT GAVIN AI 研究所 - 官方入口</title>
+    <meta name="description" content="探索由 AGENT GAVIN AI 研究所開發的下一代互動實驗，涵蓋生存競技遊戲與 AI 生成音樂。">
     <style>
-        :root { --primary: #00ffcc; --bg: #030303; --card: #121212; --text-muted: #999; }
-        body { background: var(--bg); color: white; margin: 0; font-family: 'PingFang HK', 'Microsoft JhengHei', sans-serif; line-height: 1.6; }
-        
-        /* 頂部導航 - 修正 Logo 文字 */
-        nav { background: rgba(0,0,0,0.92); padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(15px); }
-        .logo { font-size: 20px; font-weight: 800; color: var(--primary); text-decoration: none; letter-spacing: 0px; } /* 全中文 Logo */
-        .nav-links a { color: #eee; text-decoration: none; margin-left: 25px; font-size: 14px; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
+        :root { --primary: #00ffcc; --bg: #000; --card: #0a0a0a; --text-muted: #888; }
+        body { background: var(--bg); color: #fff; margin: 0; font-family: 'PingFang HK', 'Microsoft JhengHei', sans-serif; }
 
-        /* 研究所標題區 */
-        header { padding: 110px 8% 70px; text-align: center; background: radial-gradient(circle at center, #1a1a1a 0%, var(--bg) 70%); }
-        header h1 { font-size: 3.8rem; margin: 0; font-weight: 900; letter-spacing: -2px; background: linear-gradient(to right, #fff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        header p { font-size: 1.15rem; color: var(--text-muted); max-width: 720px; margin: 25px auto; line-height: 1.8; }
-
-        /* 項目矩陣 - 視覺優化 */
-        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .game-card { background: var(--card); border-radius: 28px; overflow: hidden; border: 1px solid #222; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .game-card:hover { transform: translateY(-12px); border-color: var(--primary); box-shadow: 0 20px 50px rgba(0,255,204,0.18); }
-        .game-img-wrapper { width: 100%; height: 210px; overflow: hidden; background: #000; position: relative; }
-        
-        /* 優化：移除了 .game-card img 的舊圖片樣式，準備加入 AI 生成素材圖 */
-        .game-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .game-card:hover img { scale: 1.08; }
-        
-        /* 視覺補充：在圖片上增加半透明青色發光層 */
-        .game-img-wrapper::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,255,204,0.1)); }
-
-        .game-info { padding: 30px; }
-        .game-info h3 { margin: 0 0 12px; font-size: 26px; color: #fff; font-weight: 800; }
-        .game-info p { color: var(--text-muted); font-size: 15px; margin-bottom: 30px; height: 45px; overflow: hidden; }
-        
-        .btn { display: inline-block; padding: 15px 35px; background: var(--primary); color: #000; text-decoration: none; border-radius: 12px; font-weight: 800; font-size: 15px; transition: 0.3s; border: none; cursor: pointer; }
-        .btn:hover { background: #fff; box-shadow: 0 0 25px rgba(255,255,255,0.4); }
-
-        /* 研究所使命區 */
-        .mission-box { max-width: 1000px; margin: 80px auto; padding: 70px 40px; background: #080808; border-radius: 40px; border: 1px dashed #333; text-align: center; }
-        .mission-box h2 { font-size: 30px; color: var(--primary); margin-bottom: 25px; font-weight: 900; }
-        .mission-box p { color: #888; font-size: 16px; max-width: 700px; margin: 0 auto; }
-
-        /* 頁腳 - 保留 BCTECH ASIA LIMITED */
-        footer { padding: 70px 8% 50px; border-top: 1px solid #1a1a1a; text-align: center; }
-        .footer-content { color: #555; font-size: 13px; margin-bottom: 25px; }
-        .copyright { color: #333; font-size: 12px; font-weight: bold; margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; }
-        .footer-links a { color: #666; text-decoration: none; margin: 0 15px; transition: 0.2s; }
-        .footer-links a:hover { color: var(--primary); }
-        
-        @media (max-width: 600px) {
-            header h1 { font-size: 2.8rem; }
-            .logo { font-size: 18px; }
+        /* 導航欄 */
+        nav { 
+            background: rgba(0,0,0,0.9); padding: 18px 8%; 
+            display: flex; justify-content: space-between; align-items: center; 
+            border-bottom: 1px solid #1a1a1a; position: sticky; top: 0; z-index: 1000; 
+            backdrop-filter: blur(15px); 
         }
+        .logo { font-size: 20px; font-weight: 900; color: var(--primary); text-decoration: none; }
+        .nav-links a { color: #eee; text-decoration: none; margin-left: 25px; font-size: 14px; font-weight: bold; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); text-shadow: 0 0 8px var(--primary); }
+
+        /* 標題區 */
+        header { padding: 120px 8% 80px; text-align: center; background: radial-gradient(circle at center, #111 0%, #000 80%); }
+        header h1 { font-size: 3.5rem; margin: 0; font-weight: 900; letter-spacing: -2px; background: linear-gradient(45deg, #fff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        header p { color: var(--text-muted); max-width: 700px; margin: 25px auto; font-size: 1.1rem; line-height: 1.8; }
+
+        /* 實驗矩陣 */
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        
+        .project-card { 
+            background: var(--card); border-radius: 30px; overflow: hidden; 
+            border: 1px solid #1a1a1a; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none; color: inherit;
+        }
+        .project-card:hover { 
+            transform: translateY(-15px); border-color: var(--primary); 
+            box-shadow: 0 20px 50px rgba(0,255,204,0.15); 
+        }
+        
+        .img-wrapper { width: 100%; height: 210px; overflow: hidden; background: #000; position: relative; }
+        .img-wrapper img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: 0.5s; }
+        .project-card:hover img { opacity: 1; scale: 1.1; }
+
+        .project-info { padding: 30px; text-align: center; }
+        .project-info h3 { margin: 0 0 12px; font-size: 24px; font-weight: 800; color: #fff; }
+        .project-info p { color: var(--text-muted); font-size: 15px; margin-bottom: 0; }
+        
+        .tag { display: inline-block; padding: 4px 12px; border-radius: 50px; font-size: 12px; font-weight: bold; margin-bottom: 15px; text-transform: uppercase; }
+        .tag-game { background: rgba(0, 255, 204, 0.1); color: var(--primary); border: 1px solid var(--primary); }
+        .tag-music { background: rgba(255, 0, 85, 0.1); color: #ff0055; border: 1px solid #ff0055; }
+
+        footer { padding: 80px 8% 50px; text-align: center; border-top: 1px solid #111; }
+        .copyright { color: #333; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#" class="logo">AGENT GAVIN AI 研究所</a>
+        <a href="index.html" class="logo">AGENT GAVIN AI 研究所</a>
         <div class="nav-links">
-            <a href="#games">項目矩陣</a>
-            <a href="#">技術文檔</a>
-            <a href="mailto:your-email@example.com" class="btn" style="padding: 11px 20px; font-size:14px;">聯繫研究員</a>
+            <a href="#projects">實驗矩陣</a>
+            <a href="music.html">音樂實驗</a>
+            <a href="https://www.youtube.com/@AgentGavinAI" target="_blank">YouTube</a>
         </div>
     </nav>
 
     <header>
         <h1>AGENT GAVIN AI 研究所</h1>
-        <p>我們致力於將複雜的 AI 邏輯轉化為直覺的數位互動。這裡不僅是遊戲場，更是演算法與人類反應速度對抗的尖端實驗基地。</p>
+        <p>探索 AI 驅動的互動邊界。從生存競技到數位旋律，我們在此記錄所有關於未來的技術實驗。</p>
     </header>
 
-    <div class="container" id="games">
-        <div class="game-card">
-            <div class="game-img-wrapper">
-                <img src="assets/ai_micro_war_cover.png" alt="免疫防線：微觀戰爭">
+    <div class="container" id="projects">
+        
+        <a href="game_micro_war.html" class="project-card">
+            <div class="img-wrapper">
+                <img src="assets/ai_micro_war_cover.png" alt="免疫防線">
             </div>
-            <div class="game-info">
+            <div class="project-info">
+                <span class="tag tag-game">互動實驗 / 遊戲</span>
                 <h3>🦠 免疫防線：生存競技</h3>
-                <p>純技術考驗。在不斷進化的病毒潮中，挑戰人類走位與反應的極限。</p>
-                <a href="game_micro_war.html" class="btn">啟動實驗</a>
+                <p>挑戰極限生存時間。利用虛擬搖桿在不斷進化的病毒潮中突圍。</p>
             </div>
-        </div>
+        </a>
 
-        <div class="game-card" style="opacity: 0.6;">
-            <div class="game-img-wrapper">
-                <img src="https://image.pollinations.ai/prompt/cyberpunk_space_ship_with_glitch_ai_effect_top_down_view?width=400&height=200&nologo=true" alt="太空守護者">
+        <a href="music.html" class="project-card">
+            <div class="img-wrapper">
+                <img src="assets/ai_music_cover.png" alt="AI 音樂實驗室">
             </div>
-            <div class="game-info">
-                <h3>🚀 太空守護者</h3>
-                <p>下一代物理引擎實驗。穿梭虛空，摧毀威脅地球的隕石群。</p>
-                <span style="color:var(--primary); font-weight: bold; font-family: monospace;">[ SYSTEM STABILIZING... ]</span>
+            <div class="project-info">
+                <span class="tag tag-music">藝術實驗 / 音樂</span>
+                <h3>🎵 AI 音樂實驗室</h3>
+                <p>探索由演算法排列的數位律動，聆聽來自 AI 研究所的專屬音軌。</p>
             </div>
-        </div>
-    </div>
+        </a>
 
-    <div class="mission-box">
-        <h2>研究所使命</h2>
-        <p>AGENT GAVIN AI 研究所致力於利用輕量化引擎與生成式 AI 技術，為全球用戶提供無需下載、即點即玩的尖端互動體驗。所有的實驗數據都將用於優化未來的商業 AI 輔助開發模型。</p>
     </div>
 
     <footer>
-        <div class="footer-links">
-            <a href="#">隱私權聲明</a>
-            <a href="#">開發者日誌</a>
-            <a href="#">商務聯絡</a>
-        </div>
-        <div class="footer-content">
-            技術支持與開發提供：AGENT GAVIN AI 研究所 (由 BCTECH 提供運算資源)
-        </div>
         <div class="copyright">
             &copy; 2026 BCTECH ASIA LIMITED. ALL RIGHTS RESERVED.
         </div>

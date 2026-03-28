@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AI 音樂實驗室 - AGENT GAVIN AI 研究所</title>
+    <style>
+        :root { --primary: #00ffcc; --bg: #000000; --card: #0a0a0a; --accent: #ff0055; }
+        body { background: var(--bg); color: #fff; margin: 0; font-family: 'Segoe UI', system-ui, sans-serif; overflow-x: hidden; }
+
+        /* 導航欄 - 研究所品牌風格 */
+        nav { 
+            background: rgba(0,0,0,0.95); padding: 18px 8%; 
+            display: flex; justify-content: space-between; align-items: center; 
+            border-bottom: 1px solid #1a1a1a; position: sticky; top: 0; z-index: 1000; 
+            backdrop-filter: blur(20px); 
+        }
+        .logo { font-size: 20px; font-weight: 900; color: var(--primary); text-decoration: none; letter-spacing: 1px; }
+        .btn-back { color: #666; text-decoration: none; font-size: 14px; transition: 0.3s; font-weight: bold; }
+        .btn-back:hover { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
+
+        /* 標題區 */
+        header { padding: 100px 8% 60px; text-align: center; background: radial-gradient(circle at center, #111 0%, #000 80%); }
+        header h1 { font-size: 3rem; margin: 0; font-weight: 900; letter-spacing: -1px; background: linear-gradient(45deg, #fff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        header p { color: #888; max-width: 650px; margin: 25px auto; font-size: 1.1rem; line-height: 1.8; }
+
+        /* 音樂實驗項目網格 */
+        .music-grid { max-width: 1300px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        
+        .video-card { 
+            background: var(--card); border-radius: 30px; overflow: hidden; 
+            border: 1px solid #1a1a1a; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+        .video-card:hover { 
+            transform: translateY(-15px); border-color: var(--primary); 
+            box-shadow: 0 20px 50px rgba(0,255,204,0.15); 
+        }
+        
+        /* Shorts 比例容器 (9:16) */
+        .shorts-wrapper { position: relative; width: 100%; padding-bottom: 177.78%; background: #000; }
+        .shorts-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+        .video-info { padding: 30px; text-align: center; border-top: 1px solid #1a1a1a; }
+        .video-info h3 { margin: 0 0 10px; color: #fff; font-size: 22px; font-weight: 800; }
+        .video-info p { color: #666; font-size: 14px; margin: 0; font-family: monospace; }
+
+        /* 頻道引流區 */
+        .cta-section { text-align: center; padding: 80px 20px; border-top: 1px solid #111; margin-top: 60px; }
+        .btn-youtube { 
+            display: inline-block; padding: 18px 50px; background: #ff0000; 
+            color: #fff; text-decoration: none; border-radius: 50px; 
+            font-weight: 900; font-size: 18px; transition: 0.3s; 
+            box-shadow: 0 10px 20px rgba(255,0,0,0.2);
+        }
+        .btn-youtube:hover { background: #cc0000; transform: scale(1.05) rotate(-1deg); box-shadow: 0 15px 30px rgba(255,0,0,0.4); }
+
+        /* 頁腳 */
+        footer { padding: 60px 8% 40px; text-align: center; border-top: 1px solid #111; }
+        .copyright { color: #333; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+        
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.2rem; }
+            .music-grid { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">AGENT GAVIN AI 研究所</a>
+        <a href="index.html" class="btn-back">返回項目矩陣</a>
+    </nav>
+
+    <header>
+        <h1>AI 音樂實驗室</h1>
+        <p>在這裡，音符由演算法重新排列。我們探索人工智慧與數位旋律的交界，為每一個實驗項目打造專屬的聽覺靈魂。</p>
+    </header>
+
+    <div class="music-grid">
+        <div class="video-card">
+            <div class="shorts-wrapper">
+                <iframe src="https://www.youtube.com/embed/R9VqjRotYZQ" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <h3>實驗音軌 #001</h3>
+                <p>[ PULSE_CORE_SYNC ]</p>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="shorts-wrapper">
+                <iframe src="https://www.youtube.com/embed/-IrLrcOVyaI" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <h3>實驗音軌 #002</h3>
+                <p>[ DIMENSION_RESONANCE ]</p>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="shorts-wrapper">
+                <iframe src="https://www.youtube.com/embed/pD_3iEi_ExQ" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <h3>實驗音軌 #003</h3>
+                <p>[ NEURAL_MELODY_TEST ]</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <h2 style="font-size: 28px; margin-bottom: 30px;">追蹤研究進度</h2>
+        <a href="https://www.youtube.com/@AgentGavinAI" class="btn-youtube" target="_blank">訂閱 AGENT GAVIN AI 頻道</a>
+    </div>
+
+    <footer>
+        <div class="copyright">
+            &copy; 2026 BCTECH ASIA LIMITED. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+
+</body>
+</html>
